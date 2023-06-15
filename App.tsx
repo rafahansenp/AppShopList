@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import SplashScreen from "react-native-splash-screen";
 import Main from "./src/Main";
 
 import { useFonts } from "expo-font";
-// import * as SplashScreen from "expo-splash-screen";
+import * as SplashScreen from "expo-splash-screen";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,7 +12,7 @@ export default function App() {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      await SplashScreen.hide();
+      await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 
